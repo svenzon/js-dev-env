@@ -16,7 +16,7 @@ export default {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
-        filename: '[name][chunkhash].js'
+        filename: '[name].[chunkhash].js'
     },
     plugins: [
         //Generate an external CSS file with a hash
@@ -54,7 +54,7 @@ export default {
     module: {
         loaders: [
             {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-            {test: /\.css$/, loaders: ExtractTextPlugin.extract('css?sourceMap')}
+            {test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap')}
         ]
     }
 }
